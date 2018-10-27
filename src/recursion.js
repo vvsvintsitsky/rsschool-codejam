@@ -20,4 +20,4 @@ function transformTreeToArray(resultArray, nodesArray) {
 
 const recursion = inputValue => transformTreeToArray([], [inputValue]);
 
-export default recursion;
+module.exports = recursion;

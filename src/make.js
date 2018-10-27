@@ -10,4 +10,4 @@ const make = (inputValue) => {
   return closuredFunction(inputValue);
 };
 
-export default make;
+module.exports = make;

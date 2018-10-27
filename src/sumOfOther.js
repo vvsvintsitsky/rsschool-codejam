@@ -7,4 +7,4 @@ const sumOfOther = (inputArray) => {
   return resultArray;
 };
 
-export default sumOfOther;
+module.exports = sumOfOther;
