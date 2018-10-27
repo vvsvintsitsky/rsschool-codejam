@@ -1,25 +1,23 @@
 function transformTreeToArray(resultArray, nodesArray) {
-  var nextNodesArray = [];
+  const nextNodesArray = [];
   const currentNodesValues = [];
   nodesArray.forEach((node) => {
     currentNodesValues.push(node.value);
-    if(node.left) {
+    if (node.left) {
       nextNodesArray.push(node.left);
     }
-    if(node.right) {
+    if (node.right) {
       nextNodesArray.push(node.right);
     }
   });
   resultArray.push(currentNodesValues);
 
-  if(nextNodesArray.length) {
+  if (nextNodesArray.length) {
     return transformTreeToArray(resultArray, nextNodesArray);
   }
   return resultArray;
 }
 
-const recursion = (inputValue) => {
-  return transformTreeToArray([], [inputValue]);
-};
+const recursion = inputValue => transformTreeToArray([], [inputValue]);
 
 export default recursion;
