@@ -29,5 +29,31 @@ describe('make', () => {
       const result = recursion(tree);
       assert.deepStrictEqual(result, [[100], [90, 120], [70, 99, 110, 130]]);
     });
+    it('should return [[100], [120], [110, 130], [120], [110, 130]]', () => {
+      const tree = {
+        value: 100,
+        right: {
+          value: 120,
+          left: {
+            value: 110,
+          },
+          right: {
+            value: 130,
+            right: {
+              value: 120,
+              left: {
+                value: 110,
+              },
+              right: {
+                value: 130,
+              },
+            },
+          },
+        },
+      };
+
+      const result = recursion(tree);
+      assert.deepStrictEqual(result, [[100], [120], [110, 130], [120], [110, 130]]);
+    });
   });
 });
