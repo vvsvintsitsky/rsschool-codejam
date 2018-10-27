@@ -1,14 +1,13 @@
 const make = (inputValue) => {
   const operandArray = [];
-  const closuredFunction = function innerMake(inputVal) {
-    if(!(inputVal instanceof Function)) {
-      operandArray.push(...arguments);
+  const closuredFunction = function innerMake(...args) {
+    if (!(args[0] instanceof Function)) {
+      operandArray.push(...args);
       return innerMake;
-    } else {
-      return operandArray.reduce(inputVal);
     }
+    return operandArray.reduce(...args);
   };
   return closuredFunction(inputValue);
-}
+};
 
 export default make;
